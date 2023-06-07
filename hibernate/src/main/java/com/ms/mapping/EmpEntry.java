@@ -1,4 +1,6 @@
-package com.ms;
+package com.ms.mapping;
+
+import java.util.*;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -8,12 +10,13 @@ import org.hibernate.cfg.Configuration;
 public class EmpEntry {
 
 	public static void main(String[] args) {
-
-		Employee e1 = new Employee( "puskar", "se", 4000);
-
-		Employee e2 = new Employee( "sohail", "sse", 50000);
-		Employee e3 = new Employee( "Habibh", "tester", 30000);
-		Employee e4 = new Employee("hasan", "devops", 60000);
+		
+	
+		Emp e1 = new Emp(101, "puskar",  4000,new Laptop("l1"));
+		Emp e2 = new Emp(102, "sohail",  50000,new Laptop("l2"));
+		
+		Emp e3 = new Emp(103, "Habibh", 30000,new Laptop("l3"));
+		Emp e4 = new Emp(104, "hasan", 60000,new Laptop("l4"));
 
 		Configuration config = new Configuration().configure();// hibernate.cg.xml
 		SessionFactory sf = config.buildSessionFactory();// make Session

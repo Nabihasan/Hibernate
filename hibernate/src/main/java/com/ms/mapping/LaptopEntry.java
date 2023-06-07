@@ -1,19 +1,18 @@
-package com.ms;
+package com.ms.mapping;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class EmpEntry {
+public class LaptopEntry {
 
 	public static void main(String[] args) {
+		Laptop e1 = new Laptop("l1","hp",40000);
 
-		Employee e1 = new Employee( "puskar", "se", 4000);
-
-		Employee e2 = new Employee( "sohail", "sse", 50000);
-		Employee e3 = new Employee( "Habibh", "tester", 30000);
-		Employee e4 = new Employee("hasan", "devops", 60000);
+		Laptop e2 =new Laptop("l2","dell",45000);
+		Laptop e3 = new Laptop("l3","mac",50000);
+		Laptop e4 = new Laptop("l4","lanovo",30000);
 
 		Configuration config = new Configuration().configure();// hibernate.cg.xml
 		SessionFactory sf = config.buildSessionFactory();// make Session
@@ -27,7 +26,7 @@ public class EmpEntry {
 
 		t.commit();
 		session.close();
-		System.out.println("data stored successfully.......");
+		System.out.println("laptop data stored successfully.......");
 
 	}
 
